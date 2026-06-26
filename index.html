@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>A Little Surprise 💗</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+height:100vh;
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+radial-gradient(circle,#4b164d,#050010);
+
+}
+
+
+/* floating hearts */
+
+.heart{
+
+position:absolute;
+
+color:#ff4fa3;
+
+font-size:25px;
+
+animation:float 8s linear infinite;
+
+}
+
+
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh) scale(0);
+
+}
+
+
+100%{
+
+transform:translateY(-10vh) scale(1.5);
+
+}
+
+}
+
+
+
+/* main card */
+
+.card{
+
+width:360px;
+
+padding:40px;
+
+text-align:center;
+
+border-radius:30px;
+
+
+background:rgba(255,255,255,0.08);
+
+
+border:2px solid #ff5ca8;
+
+
+box-shadow:
+0 0 20px #ff5ca8,
+0 0 60px #ff008c;
+
+
+backdrop-filter:blur(10px);
+
+}
+
+
+
+h1{
+
+color:#ff9ccc;
+
+font-size:38px;
+
+}
+
+
+
+.message{
+
+margin-top:25px;
+
+color:white;
+
+font-size:18px;
+
+line-height:1.5;
+
+}
+
+
+
+button{
+
+margin-top:30px;
+
+padding:13px 30px;
+
+border:none;
+
+border-radius:30px;
+
+
+background:#ff4fa3;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+
+box-shadow:0 0 20px #ff4fa3;
+
+}
+
+
+
+.kiss{
+
+margin-top:30px;
+
+font-size:45px;
+
+color:#ff7bbb;
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+
+
+.small{
+
+margin-top:20px;
+
+font-size:30px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<audio id="music">
+
+<source src="song.mp3">
+
+</audio>
+
+
+
+<div class="card">
+
+
+<h1>
+For You 💗
+</h1>
+
+
+<div class="message">
+
+You make ordinary moments feel magical ✨
+
+<br><br>
+
+Distance doesn't stop a heart from caring 💕
+
+</div>
+
+
+
+<button onclick="playMusic()">
+
+Open Surprise ✨
+
+</button>
+
+
+
+<div class="kiss">
+
+mwaahhhh 💋
+
+</div>
+
+
+
+<div class="small">
+
+💕 🌸 🦋 ✨ 💖
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+function playMusic(){
+
+document.getElementById("music").play();
+
+document.querySelector("button").style.display="none";
+
+}
+
+
+
+// hearts animation
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💗";
+
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+heart.style.animationDelay=
+Math.random()*5+"s";
+
+
+document.body.appendChild(heart);
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
